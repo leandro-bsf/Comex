@@ -1,17 +1,30 @@
 package comex;
 
 public class Produto {
-		// int id , 
-	int quantidade;
-		 String Nome, Descricao;
-		 Float Preco;
-		 Categoria categoria;
-		/*public int getId() {
+		private int id ;
+		private static int cont;
+	    private  int quantidade;
+		private String Nome, Descricao;
+		private Float Preco;
+		Categoria categoria;
+		
+		
+		public Produto( String nome, String descricao, Float preco,int quantidade , Categoria categoria) {
+			++cont;
+		
+			this.id = cont;
+			this.quantidade = quantidade;
+			Nome = nome;
+			Descricao = descricao;
+			Preco = preco;
+			this.categoria = categoria;
+		}
+		public int getId() {
 			return id;
 		}
 		public void setId(int id) {
 			this.id = id;
-		}*/
+		}
 		public int getQuantidade() {
 			return quantidade;
 		}
@@ -45,18 +58,21 @@ public class Produto {
 		public  void calcula_estoque() {
 			
 			float subtotal =+ getPreco() * getQuantidade();
-			System.out.printf("total: %.2f \n", subtotal);
+			System.out.printf( "|"+ getId()+"|  "+getNome() +"|"+ getPreco()+"|   "+ getQuantidade()+ "   |"+subtotal);
+			 System.out.println();
 		}
 		public void calcula_imposto () {
 			float imposto;
 			imposto = (float) (getPreco()*0.4);
-			System.out.printf("Valor imposto por unidade: %.2f\n", imposto);
 			
+			System.out.printf( "|"+ getId()+"|  "+getNome() +"|   "+ getPreco()+"|"+imposto);
+			 System.out.println();
 		}
 		public void print () {
-			System.out.printf("Nome Produto: %s - Descricao: %s  valor: %f - quantidade: %d - categoria: %s \n",
-			    getNome(), getDescricao() , getPreco() , getQuantidade() , getCategoria()
-			    );
+			
+			System.out.printf(
+					"|  "+getId()+"|"+ getNome()+"|"+getDescricao()+"|  "+getPreco() +"   |    "+ getQuantidade() +"      |   "+getCategoria().getDescricao());
+			 System.out.println();
 
 		}
 		 

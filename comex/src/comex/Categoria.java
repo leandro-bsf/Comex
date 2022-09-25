@@ -1,26 +1,26 @@
 package comex;
 
 public  class Categoria {
-	private static int cont = 0;
+
       private int Id;
-	 String Descricao;
- String Ativa = "inativa" ;
+	  private String Descricao;
+      private String Ativa = "inativa" ;
+	  private static int cont = 0;
 	public  Categoria(String descricao, String ativa) {
-		
+		  ++cont;
 		Descricao = descricao;
 		Ativa = ativa;
-	    cont++;
+		Id = cont;
+	  
 		
 	}
 
-	public Categoria() {
-		
-	}
+	
 	public int getId() {
 		return Id;
 	}
     public void setId(int id) {
-		this.Id = this.cont;
+		this.Id = id;
 	}
 	
 
