@@ -61,7 +61,7 @@ public String getEstado() {
 
 
 public void PrintCliente() {
-	System.out.println("ID  |     Nome     |  CPF    |  Telefone  | Rua      |  Numero   |  Complento |   Bairro  | Cidade  | Estado ");
+
 	System.out.printf("|"+ getId()+"|"+ getNome() +"|"+  getCpf() +"|"+ getTelefone() +"|"+  getRua() +"|"+  getNumero() +"|"+ 
 			getComplemento()+"|"+ getBairro() +"|"+ getCidade() +"|"+ getEstado());
 	
