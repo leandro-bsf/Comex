@@ -7,12 +7,22 @@ public  class Categoria {
       private String Ativa = "inativa" ;
 	  private static int cont = 0;
 	public  Categoria(String descricao, String ativa) {
+		
+		ativa = ativa.toUpperCase();
+		System.out.println(ativa);
 		  ++cont;
+		  if(descricao.length() <= 3 || descricao == null) {
+			  throw new IllegalArgumentException("Descricao deve ter mais que 3 caracteres e nao pode ser NULL");
+			  
+		  }
+		  if(ativa != "ATIVA"  && ativa != "INATIVA") {
+			  throw new IllegalArgumentException("Status da Cetegoria deve ser apenas ATIVA OU INATIVA!"); 
+		  }
 		Descricao = descricao;
 		Ativa = ativa;
 		Id = cont;
 	  
-		
+		System.out.println("Cadastrou");
 	}
 
 	
