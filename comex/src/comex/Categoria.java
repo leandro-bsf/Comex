@@ -4,28 +4,49 @@ public  class Categoria {
 
       private int Id;
 	  private String Descricao;
-      private String Ativa = "inativa" ;
+      private String Status = "inativa" ;
 	  private static int cont = 0;
-	public  Categoria(String descricao, String ativa) {
+	public  Categoria(String descricao, String status) {
 		
-		ativa = ativa.toUpperCase();
-		System.out.println(ativa);
+		status = status.toUpperCase();
+		System.out.println(status);
 		  ++cont;
 		  if(descricao.length() <= 3 || descricao == null) {
 			  throw new IllegalArgumentException("Descricao deve ter mais que 3 caracteres e nao pode ser NULL");
 			  
 		  }
-		  if(ativa != "ATIVA"  && ativa != "INATIVA") {
+		  if(status != "ATIVA" &&  status != "INATIVA") {
 			  throw new IllegalArgumentException("Status da Cetegoria deve ser apenas ATIVA OU INATIVA!"); 
 		  }
+		  
 		Descricao = descricao;
-		Ativa = ativa;
+		Status = status;
 		Id = cont;
 	  
-		System.out.println("Cadastrou");
+		System.out.println("Cadastrou  pelo construtor 1");
 	}
 
 	
+	public Categoria(int id, String descricao, String status) {
+		status = status.toUpperCase();
+		System.out.println(status);
+		  ++cont;
+		  if(descricao.length() <= 3 || descricao == null) {
+			  throw new IllegalArgumentException("Descricao deve ter mais que 3 caracteres e nao pode ser NULL");
+			  
+		  }
+		  if(status != "ATIVA" &&  status != "INATIVA") {
+			  throw new IllegalArgumentException("Status da Cetegoria deve ser apenas ATIVA OU INATIVA!"); 
+		  }
+		  
+		Descricao = descricao;
+		Status = status;
+		Id = cont;
+	  
+		System.out.println("Cadastrou  pelo construtor 2");
+	}
+
+
 	public int getId() {
 		return Id;
 	}
@@ -41,10 +62,10 @@ public  class Categoria {
 		Descricao = descricao;
 	}
 	public String getAtiva() {
-		return Ativa;
+		return Status;
 	}
 	public void setAtiva(String ativa) {
-		Ativa = ativa;
+		Status = ativa;
 	}
 	public void  print () {
 		System.out.printf("id: %d - Descricao: %s  - Situacao: %s \n ", getId() , getDescricao() , getAtiva());
