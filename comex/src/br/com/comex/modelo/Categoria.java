@@ -1,4 +1,4 @@
-package comex;
+package br.com.comex.modelo;
 
 public  class Categoria {
 
@@ -9,7 +9,7 @@ public  class Categoria {
 	public  Categoria(String descricao, String status) {
 		
 		status = status.toUpperCase();
-		System.out.println(status);
+		
 		  ++cont;
 		  if(descricao.length() <= 3 || descricao == null) {
 			  throw new IllegalArgumentException("Descricao deve ter mais que 3 caracteres e nao pode ser NULL");
@@ -23,27 +23,31 @@ public  class Categoria {
 		Status = status;
 		Id = cont;
 	  
-		System.out.println("Cadastrou  pelo construtor 1");
+		System.out.println("Cadastrou com Sucesso!");
 	}
 
 	
 	public Categoria(int id, String descricao, String status) {
 		status = status.toUpperCase();
-		System.out.println(status);
+	
 		  ++cont;
 		  if(descricao.length() <= 3 || descricao == null) {
 			  throw new IllegalArgumentException("Descricao deve ter mais que 3 caracteres e nao pode ser NULL");
+			
 			  
 		  }
 		  if(status != "ATIVA" &&  status != "INATIVA") {
 			  throw new IllegalArgumentException("Status da Cetegoria deve ser apenas ATIVA OU INATIVA!"); 
+		  }
+		  if(id != cont) {
+			  throw new IllegalArgumentException("Numero do id nao pode ser menor que "+cont); 
 		  }
 		  
 		Descricao = descricao;
 		Status = status;
 		Id = cont;
 	  
-		System.out.println("Cadastrou  pelo construtor 2");
+		System.out.println("Cadastrado com sucesso!");
 	}
 
 

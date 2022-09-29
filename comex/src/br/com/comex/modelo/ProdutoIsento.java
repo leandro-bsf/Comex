@@ -1,14 +1,13 @@
-package comex;
+package br.com.comex.modelo;
 
 public class ProdutoIsento extends Produto {
 
 	 String Imposto = "Isento";
 		
 	
-
-		public ProdutoIsento(String nome, String descricao, Float preco, int quantidade, Categoria categoria
-			) {
+		public ProdutoIsento(String nome, String descricao, Float preco, int quantidade, Categoria categoria){
 		super(nome, descricao, preco, quantidade, categoria);
+		
 		
 	}
 
