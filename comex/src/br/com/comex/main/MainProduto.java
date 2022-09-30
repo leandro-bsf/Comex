@@ -8,7 +8,6 @@ public class MainProduto {
 
 	public static void main(String[] args) {
 		 Categoria  cat1 = new Categoria("INFORMATICA","ATIVA");
-		
 		 Categoria  cat3 = new Categoria("LIVROS","ATIVA");
 		
 		
