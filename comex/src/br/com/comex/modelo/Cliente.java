@@ -2,10 +2,12 @@ package br.com.comex.modelo;
 
 public class Cliente {
   private int Id ;
-  String Nome , Cpf, Telefone , Rua,Numero,Complemento, Bairro, Cidade, Estado ;
+  String Nome , Cpf, Telefone , Rua,Numero,Complemento, Bairro, Cidade ;
+  Status status;
+  Estados ufs;
   
   public Cliente( String nome, String cpf, String telefone, String rua, String numero, String complemento,
-			String bairro, String cidade, String estado) {
+			String bairro, String cidade, Estados estado, Status status) {
 		super();
 		   numero = numero.toUpperCase();
 		 
@@ -34,10 +36,7 @@ public class Cliente {
 			  throw new IllegalArgumentException("Cidade deve ter mais  que 1 caracterer");
 			  
 		  }
-		  if(estado.length() !=  2 ) {
-			  throw new IllegalArgumentException("Estado invalido, informar apenas sigla");
-			  
-		  }
+		 
 		Nome = nome;
 		Cpf = cpf;
 		Telefone = telefone;
@@ -46,7 +45,9 @@ public class Cliente {
 		Complemento = complemento;
 		Bairro = bairro;
 		Cidade = cidade;
-		Estado = estado;
+		
+		this.ufs = estado;
+		this.status = status;
 	}
 
 	public int getId() {
@@ -85,15 +86,28 @@ public String getCidade() {
 	return Cidade;
 }
 
-public String getEstado() {
-	return Estado;
+
+
+public Estados getUfs() {
+	return ufs;
 }
 
+public void setUfs(Estados ufs) {
+	this.ufs = ufs;
+}
+
+public Status getStatus() {
+	return status;
+}
+
+public void setStatus(Status status) {
+	this.status = status;
+}
 
 public void PrintCliente() {
 
 	System.out.printf("|"+ getId()+"|"+ getNome() +"|"+  getCpf() +"|"+ getTelefone() +"|"+  getRua() +"|"+  getNumero() +"|"+ 
-			getComplemento()+"|"+ getBairro() +"|"+ getCidade() +"|"+ getEstado());
+			getComplemento()+"|"+ getBairro() +"|"+ getCidade() +"|"+ getUfs());
 	
 	System.out.println();
 	System.out.println("Cliente Inserido!\n");
