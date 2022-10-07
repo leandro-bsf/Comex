@@ -1,5 +1,7 @@
 package br.com.comex.csv;
 
+import java.text.NumberFormat;
+
 public class MontanteTotalVendas extends PedidoCsv {
 	 float TotalVenda;
 	public void MontanteTotalVendas (String preco , String  quantidade) {
@@ -9,7 +11,8 @@ public class MontanteTotalVendas extends PedidoCsv {
 	}
 	
 	 public void printTV() {
-		 System.out.println("Montante de vendas: "+ TotalVenda);
+		
+		 System.out.println("Montante de vendas: "+ NumberFormat.getCurrencyInstance().format(TotalVenda));
 	 }
    
 }

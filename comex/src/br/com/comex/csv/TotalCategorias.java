@@ -23,7 +23,7 @@ public class TotalCategorias extends PedidoCsv {
 		for(String it: outra) {
 			TotalCategoria++;
 	}
-	System.out.println("total  de Categorias unicas: "+ TotalCategoria);
+	System.out.println("Total  de Categorias unicas: "+ TotalCategoria);
 	}
 	
 	

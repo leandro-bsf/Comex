@@ -1,7 +1,10 @@
 package br.com.comex.csv;
 
 import java.io.File;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import br.com.comex.modelo.Pedido;
 import java.util.ArrayList;
@@ -34,7 +37,8 @@ public class LeitorPedidosCsv {
 			  String data  = linhaScanner.next();
 			  String Cliente = linhaScanner.next();
 			 PedidoCsv pedido = new PedidoCsv( Categoria, Produto,Cliente, Preco, Quantidade, data );
-			
+			 pedidos.add(pedido);
+		
 			 ProdV.TotalProdutosVendidos(Quantidade);
 			 tc.TotalCategoria(Categoria);
 			 tv.MontanteTotalVendas(Preco, Quantidade);
@@ -46,11 +50,20 @@ public class LeitorPedidosCsv {
 		  
 		  scanner.close();
 		  
+		PedMaxMin  comparator = new PedMaxMin();
 		
 		 tc.somacat();
 		 ProdV.calcTotal();
          tv.printTV();
-		// pbm.printpedido();
+         pedidos.sort(comparator);
+         
+        
+         Double produto1 = Double.parseDouble(pedidos.get(0).getPreco());
+         System.out.println("Pedido mais caro: "+ NumberFormat.getCurrencyInstance().format(produto1)+"("+pedidos.get(0).getProduto()+")");
+         System.out.println("Pedido mais caro: "+ pedidos.get(pedidos.size()-1).getPreco()+"("+pedidos.get(pedidos.size()-1).getProduto() +")");
+         
+     
+         
 		
 		  
 		  

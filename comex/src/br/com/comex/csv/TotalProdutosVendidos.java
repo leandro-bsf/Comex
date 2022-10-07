@@ -1,5 +1,7 @@
 package br.com.comex.csv;
 
+import java.text.NumberFormat;
+
 public class TotalProdutosVendidos extends PedidoCsv {
 	   int total;
 		 
